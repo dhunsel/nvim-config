@@ -6,7 +6,7 @@ return {
         build = ':TSUpdate',
         config = function()
           require("nvim-treesitter.configs").setup({
-            ensure_installed = { "gdscript", "godot_resource", "gdshader", "lua", "typescript" },
+            ensure_installed = { "gdscript", "godot_resource", "gdshader", "lua", "typescript", "tsx", "javascript", "html", "css" },
             auto_install = false,
             highlight = {
                 enable = true,
