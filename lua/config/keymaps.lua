@@ -17,6 +17,9 @@ vim.keymap.set({ 'n' }, '<A-l>', '<C-w>l')
 -- Use jj to exit insert mode
 vim.keymap.set('i', 'jj', '<Esc>')
 
+-- Clear search highlights
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
 -- Swap between buffers
 vim.keymap.set('n', '<leader>bn', ':bnext<CR>')
 vim.keymap.set('n', '<leader>bp', ':bprev<CR>')

@@ -26,10 +26,11 @@ vim.api.nvim_create_autocmd('CursorHold', {
     end
 })
 
--- Hide diagnostics when in Insert mode
+-- Hide diagnostics when in Insert mode, and clear search highlights
 vim.api.nvim_create_autocmd('InsertEnter', {
     callback = function ()
         vim.diagnostic.hide()
+        vim.schedule(function() vim.cmd('nohlsearch') end)
     end
 })
 

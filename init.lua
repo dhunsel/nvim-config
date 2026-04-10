@@ -29,6 +29,18 @@ vim.diagnostic.config({
     }
 })
 
+vim.lsp.config('eslint', {
+--  cmd = { 'node', vim.fn.expand('~/.local/share/nvim/eslint-lsp/eslintServer.js'), '--stdio' },
+  filetypes = {
+    'javascript',
+    'javascriptreact',
+    'typescript',
+    'typescriptreact',
+    'vue',
+    'svelte',
+    'astro',
+  },
+})
 vim.lsp.enable('eslint')
 
 -- paths to check for project.godot file
@@ -51,13 +63,15 @@ if is_godot_project and not is_server_running then
     vim.fn.serverstart('/tmp/godot.pipe')
 end
 
-local port = os.getenv 'GDScript_Port' or '6005'
-local cmd = vim.lsp.rpc.connect('127.0.0.1', tonumber(port))
+if is_godot_project then
+    local port = os.getenv 'GDScript_Port' or '6005'
+    local cmd = vim.lsp.rpc.connect('127.0.0.1', tonumber(port))
 
-vim.lsp.config('gdscript', {
-  cmd = cmd,
-  filetypes = { 'gd', 'gdscript', 'gdscript3' },
-  root_markers = { 'project.godot', '.git' },
-})
+    vim.lsp.config('gdscript', {
+      cmd = cmd,
+      filetypes = { 'gdscript' },
+      root_markers = { 'project.godot', '.git' },
+    })
 
-vim.lsp.enable('gdscript')
+    vim.lsp.enable('gdscript')
+end
