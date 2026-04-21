@@ -30,7 +30,7 @@ vim.diagnostic.config({
 })
 
 vim.lsp.config('eslint', {
---  cmd = { 'node', vim.fn.expand('~/.local/share/nvim/eslint-lsp/eslintServer.js'), '--stdio' },
+  cmd = { 'node', vim.fn.expand('~/.local/share/nvim/eslint-lsp/eslintServer.js'), '--stdio' },
   filetypes = {
     'javascript',
     'javascriptreact',
