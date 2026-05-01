@@ -1,8 +1,9 @@
-return {
+return 
+{
   {
     "neovim/nvim-lspconfig",
     ft = {  "javascript", "javascriptreact", "typescript", "typescriptreact" },
-    init = function()
+    config = function()
       vim.lsp.config('eslint', {
         cmd = { 'node', vim.fn.expand('~/.local/share/nvim/eslint-lsp/eslintServer.js'), '--stdio' },
         filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },
