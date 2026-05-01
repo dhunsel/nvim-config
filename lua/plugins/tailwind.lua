@@ -5,7 +5,7 @@ return
     ft = { "html", "css", "javascript", "javascriptreact", "typescript", "typescriptreact" },
     init = function()
       vim.lsp.config('tailwindcss', {
-        filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },
+        filetypes = { 'html', 'css', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },
       })
       vim.lsp.enable('tailwindcss')
     end,
