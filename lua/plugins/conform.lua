@@ -11,6 +11,7 @@ return {
       html = { "prettierd", "prettier", stop_after_first = true },
       json = { "prettierd", "prettier", stop_after_first = true },
       cs = { "csharpier" },
+      gdscript = { "gdformat" },
     },
     format_on_save = {
       timeout_ms = 3000,

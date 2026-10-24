@@ -40,6 +40,16 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
+-- GDScript is indented with tabs, which is also what gdformat emits.
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'gdscript' },
+  callback = function()
+    vim.bo.expandtab = false
+    vim.bo.shiftwidth = 4
+    vim.bo.tabstop = 4
+  end,
+})
+
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s) See `:help 'confirm'`
 vim.o.confirm = true
